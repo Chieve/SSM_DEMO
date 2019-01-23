@@ -76,7 +76,7 @@ public class LoginController {
         if (!"admin1234".equals(username + password)){
             return JsonMsg.fail().addInfo("login_error", "输入账号用户名与密码不匹配，请重新输入！");
         }
-        return JsonMsg.success();
+        return JsonMsg.success200();
     }
 
 

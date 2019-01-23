@@ -10,8 +10,10 @@ import java.util.Map;
 public class JsonMsg {
 
     private int code;
+    private int status;
     private String msg;
     private Map<String, Object> extendInfo = new HashMap<>();
+    private Map<String, Object> data = new HashMap<>();
 
     public int getCode() {
         return code;
@@ -44,6 +46,13 @@ public class JsonMsg {
         return res;
     }
 
+    public static JsonMsg success200(){
+        JsonMsg res = new JsonMsg();
+        res.setStatus(200);
+        res.setMsg("操作成功！");
+        return res;
+    }
+
     public static JsonMsg fail(){
         JsonMsg res = new JsonMsg();
         res.setCode(200);
@@ -56,4 +65,19 @@ public class JsonMsg {
         return this;
     }
 
+    public void setData(Map<String, Object> data) {
+        this.data = data;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public Map<String, Object> getData() {
+        return data;
+    }
 }

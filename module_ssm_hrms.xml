@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_ssm_hrms" default="compile.module.ssm_hrms">
+  <dirname property="module.ssm_hrms.basedir" file="${ant.file.module_ssm_hrms}"/>
+  
+  <property name="module.jdk.home.ssm_hrms" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ssm_hrms" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ssm_hrms" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ssm_hrms" value="-encoding UTF-8 -source 7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="ssm_hrms.output.dir" value="${module.ssm_hrms.basedir}/target/classes"/>
+  <property name="ssm_hrms.testoutput.dir" value="${module.ssm_hrms.basedir}/target/test-classes"/>
+  
+  <path id="ssm_hrms.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ssm_hrms.module.production.classpath">
+    <path refid="${module.jdk.classpath.ssm_hrms}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.9.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.9.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.14.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:jsp-api:2.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_taglibs:standard:1.1.2.classpath"/>
+    <path refid="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.11.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.10.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:4.2.9.release.classpath"/>
+  </path>
+  
+  <path id="ssm_hrms.runtime.production.module.classpath">
+    <pathelement location="${ssm_hrms.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.9.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.9.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.14.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_taglibs:standard:1.1.2.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.11.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.10.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:4.2.9.release.classpath"/>
+  </path>
+  
+  <path id="ssm_hrms.module.classpath">
+    <path refid="${module.jdk.classpath.ssm_hrms}"/>
+    <pathelement location="${ssm_hrms.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.9.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.9.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.14.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:jsp-api:2.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_taglibs:standard:1.1.2.classpath"/>
+    <path refid="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.11.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.10.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:4.2.9.release.classpath"/>
+  </path>
+  
+  <path id="ssm_hrms.runtime.module.classpath">
+    <pathelement location="${ssm_hrms.testoutput.dir}"/>
+    <pathelement location="${ssm_hrms.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.2.9.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.2.9.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.2.9.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.2.9.release.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:8.0.14.classpath"/>
+    <path refid="library.maven:_com.google.protobuf:protobuf-java:3.6.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:jsp-api:2.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_taglibs:standard:1.1.2.classpath"/>
+    <path refid="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.11.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.10.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:4.2.9.release.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ssm_hrms">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ssm_hrms">
+    <patternset refid="excluded.from.module.ssm_hrms"/>
+  </patternset>
+  
+  <path id="ssm_hrms.module.sourcepath">
+    <dirset dir="${module.ssm_hrms.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ssm_hrms" depends="compile.module.ssm_hrms.production,compile.module.ssm_hrms.tests" description="Compile module SSM_HRMS"/>
+  
+  <target name="compile.module.ssm_hrms.production" depends="register.custom.compilers" description="Compile module SSM_HRMS; production classes">
+    <mkdir dir="${ssm_hrms.output.dir}"/>
+    <javac2 destdir="${ssm_hrms.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.ssm_hrms}/javac">
+      <compilerarg line="${compiler.args.ssm_hrms}"/>
+      <bootclasspath refid="ssm_hrms.module.bootclasspath"/>
+      <classpath refid="ssm_hrms.module.production.classpath"/>
+      <src refid="ssm_hrms.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ssm_hrms"/>
+    </javac2>
+    
+    <copy todir="${ssm_hrms.output.dir}">
+      <fileset dir="${module.ssm_hrms.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.ssm_hrms.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ssm_hrms.tests" depends="register.custom.compilers,compile.module.ssm_hrms.production" description="compile module SSM_HRMS; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ssm_hrms" description="cleanup module">
+    <delete dir="${ssm_hrms.output.dir}"/>
+    <delete dir="${ssm_hrms.testoutput.dir}"/>
+  </target>
+</project>
